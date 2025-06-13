@@ -1,37 +1,37 @@
-# BirdShazam
-A project developed for the BirdCLEF 2024 competition, focusing on accurate bird species classification using audio recordings from the wild.
+# BirdShazam – Acoustic Bird Species Identifier
+BirdShazam is a machine learning-based audio classification system that identifies bird species from soundscape recordings. Designed for ecological research and conservation, it leverages MFCC feature extraction and transformer-based models to detect multiple overlapping bird calls in noisy natural environments.
 
-🔍 Project Overview
+## 🔍 Project Overview
 This repository presents a complete pipeline for identifying bird species from field recordings using deep learning. It includes:
 
-Audio preprocessing and spectrogram generation
+🔹 Audio preprocessing and spectrogram generation
 
-Multi-model classification using EfficientNet and custom CNNs
+🔹 Multi-model classification using EfficientNet and custom CNNs
 
-Inference on 81,000+ unlabeled soundscape samples
+🔹 Inference on 81,000+ unlabeled soundscape samples
 
-Support for rare and nocturnal bird species
+🔹 Support for rare and nocturnal bird species
 
-Post-inference metrics and interpretability with Grad-CAM
+🔹 Post-inference metrics and interpretability with Grad-CAM
 
-📂 Dataset
-Source: BirdCLEF 2024 Competition on Kaggle
+## 📂 Dataset
+🔹 Source: BirdCLEF 2024 Competition on Kaggle
 
-Training Data: Field recordings of 181 bird species
+🔹 Training Data: Field recordings of 181 bird species
 
-Unlabeled Data: 81,000+ soundscape chunks
+🔹 Unlabeled Data: 81,000+ soundscape chunks
 
-Preprocessing:
+## Preprocessing:
 
-Audio resampled to 32kHz
+🔹 Audio resampled to 32kHz
 
-5s chunks extracted from long recordings
+🔹 5s chunks extracted from long recordings
 
-Mel Spectrograms generated (300×300 PNG)
+🔹 Mel Spectrograms generated (300×300 PNG)
 
-Feature extraction: RMS, spectral flatness for nighttime detection
+🔹 Feature extraction: RMS, spectral flatness for nighttime detection
 
-🧠 Models
+## 🧠 Models
 
 🔹 General Classifier
 Model: EfficientNet-B3
@@ -56,15 +56,19 @@ Handles overlapping species in the same audio
 Macro F1 Score: 0.75, Precision: 0.85
 
 
-🌀 Inference Pipeline
-Input: 81,000 unlabeled spectrograms
-Nighttime detection via binary classifier (RMS + flatness)
-Routed through appropriate models: General / Rare / Nocturnal
-Combined predictions saved to final_combined_predictions.csv
-Output: 181-class probability distribution per 5s chunk
+## 🌀 Inference Pipeline
+🔹 Input: 81,000 unlabeled spectrograms
+
+🔹 Nighttime detection via binary classifier (RMS + flatness)
+
+🔹 Routed through appropriate models: General / Rare / Nocturnal
+
+🔹 Combined predictions saved to final_combined_predictions.csv
+
+🔹 Output: 181-class probability distribution per 5s chunk
 
 
-📈 Results
+##  Results
 Models evaluated using:
 Accuracy (Top-1)
 Precision, Recall, Macro F1
@@ -72,14 +76,11 @@ Threshold-optimized F1 for multilabel cases
 Grad-CAM visualizations included for interpretability
 
 
-🌱 Real-World Impact
+## 🌱 Real-World Impact
 Deployable on university campuses, nature reserves, and urban zones
 Supports biodiversity tracking, ecological research, and citizen science
 Dashboard-ready output with Song Richness Index (SRI) support
 
-🛠 Technologies Used
-Python, PyTorch, Timm
-Librosa, PIL, Scikit-learn, Pandas, Matplotlib
-Kaggle API, TorchVision
+
 
 
